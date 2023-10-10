@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { Header, Navbar } from "./components";
 
 function App() {
   return (
     <>
-      <div className="min-h-screen bg-black">
-        <p className="font-700 text-yellow-400 ">Fresh</p>
-      </div>
+      <Navbar />
+      <Header />
     </>
   );
 }
