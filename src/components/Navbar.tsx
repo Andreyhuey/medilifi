@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, Button } from "react-scroll";
 
+// icons
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => setNav(!nav);
@@ -10,7 +13,17 @@ const Navbar = () => {
       {/* for pcs and tabs */}
       <div className="hidden md:flex items-center justify-between">
         <ul className="flex items-center md:gap-12 lg:gap-16">
-          <Link className="h1 hover:cursor-pointer">MED</Link>
+          <Link
+            className="h1 hover:cursor-pointer"
+            activeClass="active"
+            to=""
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            MED
+          </Link>
           <Link
             activeClass="active"
             to=""
@@ -70,6 +83,7 @@ const Navbar = () => {
       </div>
 
       {/* for phones */}
+      <div className=""></div>
     </div>
   );
 };
