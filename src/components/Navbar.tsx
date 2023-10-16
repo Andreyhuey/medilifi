@@ -83,7 +83,89 @@ const Navbar = () => {
       </div>
 
       {/* for phones */}
-      <div className=""></div>
+      <div className="lg:hidden flex items-center justify-between">
+        <Link
+          className={`h1 hover:cursor-pointer ${nav && "text-transparent"} `}
+          activeClass="active"
+          to=""
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        >
+          MED
+        </Link>
+        <div onClick={handleNav}>
+          {nav ? (
+            <AiOutlineClose className="text-[35px]" />
+          ) : (
+            <AiOutlineMenu className="text-[35px]" />
+          )}
+        </div>
+      </div>
+
+      {nav && (
+        <div className="h-screen bg-[#CCE0FF]">
+          <div className="flex flex-col gap-32 items-center h-screen pt-10">
+            <Link
+              activeClass="active"
+              to=""
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              className="hover:cursor-pointer"
+            >
+              About
+            </Link>
+            <Link
+              activeClass="active"
+              to=""
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              className="hover:cursor-pointer"
+            >
+              Features
+            </Link>
+            <Link
+              activeClass="active"
+              to=""
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              className="hover:cursor-pointer"
+            >
+              Services
+            </Link>
+            <Link
+              activeClass="active"
+              to=""
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              className="hover:cursor-pointer"
+            >
+              Blog
+            </Link>
+
+            <Link
+              className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans"
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
