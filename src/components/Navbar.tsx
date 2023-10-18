@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Button } from "react-scroll";
 
 // icons
@@ -7,6 +7,18 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => setNav(!nav);
+
+  // Add this effect to handle body overflow
+  useEffect(() => {
+    if (nav) {
+      document.body.style.overflow = "hidden"; // Prevent scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Allow scrolling
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // Make sure to reset when unmounting
+    };
+  }, [nav]);
 
   return (
     <div className="bg-[#CCE0FF] lg:px-12 md:px-8 px-4 py-3">
@@ -106,7 +118,18 @@ const Navbar = () => {
 
       {nav && (
         <div className="h-screen bg-[#CCE0FF]">
-          <div className="flex flex-col gap-32 items-center h-screen pt-10">
+          <div className="flex flex-col gap-16 items-center h-screen pt-10">
+            <Link
+              activeClass="active"
+              to=""
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              className="hover:cursor-pointer"
+            >
+              Home
+            </Link>
             <Link
               activeClass="active"
               to=""
@@ -153,7 +176,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans"
+              className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 trans"
               activeClass="active"
               to="contact"
               spy={true}
