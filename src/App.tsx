@@ -1,10 +1,11 @@
-import { Header, Navbar } from "./components";
+import { About, Header, Navbar } from "./components";
 
 function App() {
   return (
     <>
       <Navbar />
       <Header />
+      <About />
     </>
   );
 }

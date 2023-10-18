@@ -2,11 +2,11 @@ import header from "../assets/header-img.png";
 
 const Header = () => {
   return (
-    <div className="bg-[#CCE0FF] lg:px-12 md:px-8 px-4 py-16">
+    <div className="bg-[#CCE0FF] section">
       <div className="flex flex-col lg:flex-row justify-between items-center">
         <div className="lg:order-1 order-2 flex flex-col gap-5 items-start">
           <p className="text-[#A1A7B0]">MEDICAL</p>
-          <h1 className="lg:text-[70px] text-[56px] font-bold lg:leading-[80px]">
+          <h1 className="lg:text-[70px] text-[56px] font-bold lg:leading-[80px] leading-[60px]">
             Find Your Doctor
           </h1>
           <p className="text-[#A1A7B0] lg:max-w-[370px]">
