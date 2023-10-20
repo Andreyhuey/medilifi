@@ -95,7 +95,7 @@ const Navbar = () => {
       </div>
 
       {/* for phones */}
-      <div className="lg:hidden flex items-center justify-between">
+      <div className="md:hidden flex items-center justify-between">
         <Link
           className={`h1 hover:cursor-pointer ${nav && "text-transparent"} `}
           activeClass="active"
