@@ -25,3 +25,5 @@ export const team = [
     role: "Technician",
   },
 ];
+
+export const testimonial = [{}];
