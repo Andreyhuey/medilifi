@@ -13,13 +13,15 @@ const Services = () => {
         </h1>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="flex  items-center justify-center h-[256px] ">
+        <div className="flex  items-center justify-center h-[256px] shadow-md">
           <div className="bg-[#EEFAFF] flex items-center justify-center h-full w-full">
             <img src={icon4} alt="icon4" />
           </div>
           <div className="p-6 flex flex-col items-center justify-between">
             <p className="font-bold ">Health Promotion</p>
-            <p className="text-[#F4FCFF]">Organized medical service offering</p>
+            <p className="text-[#33333369]">
+              Organized medical service offering
+            </p>
           </div>
         </div>
         <div></div>
