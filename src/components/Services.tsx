@@ -12,21 +12,51 @@ const Services = () => {
           Field of Health and Healing
         </h1>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="flex  items-center justify-center h-[256px] shadow-md">
+      <div className="grid grid-cols-1 lg:grid-cols-2 py-10 lg:px-20 gap-5 justify-center">
+        <div className="flex items-center justify-center h-[256px] lg:w-[475px] shadow-md">
           <div className="bg-[#EEFAFF] flex items-center justify-center h-full w-full">
             <img src={icon4} alt="icon4" />
           </div>
-          <div className="p-6 flex flex-col items-center justify-between">
+          <div className="p-6 flex flex-col items-start h-full w-full justify-between">
             <p className="font-bold ">Health Promotion</p>
             <p className="text-[#33333369]">
               Organized medical service offering
             </p>
           </div>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className="flex items-center justify-center h-[256px] lg:w-[475px] shadow-md">
+          <div className="bg-[#EEFAFF] flex items-center justify-center h-full w-full">
+            <img src={icon5} alt="icon4" />
+          </div>
+          <div className="p-6 flex flex-col items-start h-full w-full justify-between">
+            <p className="font-bold ">Health Promotion</p>
+            <p className="text-[#33333369]">
+              Organized medical service offering
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center justify-center h-[256px] lg:w-[475px] shadow-md">
+          <div className="bg-[#EEFAFF] flex items-center justify-center h-full w-full">
+            <img src={icon6} alt="icon4" />
+          </div>
+          <div className="p-6 flex flex-col items-start h-full w-full justify-between">
+            <p className="font-bold ">Health Promotion</p>
+            <p className="text-[#33333369]">
+              Organized medical service offering
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center justify-center h-[256px] lg:w-[475px] shadow-md">
+          <div className="bg-[#EEFAFF] flex items-center justify-center h-full w-full">
+            <img src={icon7} alt="icon4" />
+          </div>
+          <div className="p-6 flex flex-col items-start h-full w-full justify-between">
+            <p className="font-bold ">Health Promotion</p>
+            <p className="text-[#33333369]">
+              Organized medical service offering
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
