@@ -1,8 +1,10 @@
 import { AiFillMail } from "react-icons/ai";
+import { IoIosMailOpen } from "react-icons/io";
+import { BsPhone } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen section flex flex-col lg:flex-row gap-12 justify-between">
+    <div className="min-h-screen section flex flex-col lg:flex-row gap-16 justify-between">
       <div className="flex-1">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126830.70957847485!2d3.342336!3d6.5896448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1687882992552!5m2!1sen!2sng"
@@ -21,7 +23,7 @@ const Contact = () => {
         <div className="flex flex-col justify-start gap-8 pt-4">
           <div className="flex gap-3">
             <div className="rounded-full p-4 bg-[#EEFAFF]">
-              <AiFillMail className="bg-[#478CF7]" />
+              <AiFillMail className="text-[#478CF7]" />
             </div>
             <div>
               <p className="text-[#3333338e]">Address</p>
@@ -33,7 +35,7 @@ const Contact = () => {
           {/*  */}
           <div className="flex gap-3">
             <div className="rounded-full p-4 bg-[#EEFAFF]">
-              <AiFillMail className="bg-[#478CF7]" />
+              <BsPhone className="text-[#478CF7]" />
             </div>
             <div>
               <p className="text-[#3333338e]">Phone</p>
@@ -43,7 +45,7 @@ const Contact = () => {
           {/*  */}
           <div className="flex gap-3">
             <div className="rounded-full p-4 bg-[#EEFAFF]">
-              <AiFillMail className="bg-[#478CF7]" />
+              <IoIosMailOpen className="text-[#478CF7]" />
             </div>
             <div>
               <p className="text-[#3333338e]">Mail</p>
