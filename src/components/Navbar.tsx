@@ -43,7 +43,7 @@ const Navbar = () => {
             smooth={true}
             offset={50}
             duration={500}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer hover:scale-110 trans"
           >
             <li className="">About</li>
           </Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
             smooth={true}
             offset={50}
             duration={500}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer hover:scale-110 trans"
           >
             <li className="">Features</li>
           </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
             smooth={true}
             offset={50}
             duration={500}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer hover:scale-110 trans"
           >
             Services
           </Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
             smooth={true}
             offset={50}
             duration={500}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer hover:scale-110 trans"
           >
             Blog
           </Link>
