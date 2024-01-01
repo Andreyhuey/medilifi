@@ -80,18 +80,42 @@ const Navbar = () => {
           >
             Blog
           </Link>
+          <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className="hover:cursor-pointer hover:scale-110 trans"
+          >
+            Contact
+          </Link>
         </ul>
-        <Button
-          className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans"
-          activeClass="active"
-          to="contact"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={500}
-        >
-          Contact
-        </Button>
+        <div className="flex gap-3">
+          <Button
+            className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
+            activeClass="active"
+            to="sign-up"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Sign Up
+          </Button>
+          <Button
+            className="bg-[#478CF7] text-white border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
+            activeClass="active"
+            to="log-in"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Log In
+          </Button>
+        </div>
       </div>
 
       {/* for phones */}
@@ -118,7 +142,7 @@ const Navbar = () => {
 
       {nav && (
         <div className="h-screen bg-[#CCE0FF]">
-          <div className="flex flex-col gap-16 items-center h-screen pt-10">
+          <div className="flex flex-col gap-10 items-center h-screen pt-10">
             <Link
               activeClass="active"
               to=""
@@ -174,9 +198,8 @@ const Navbar = () => {
             >
               Blog
             </Link>
-
             <Link
-              className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 trans"
+              className="hover:cursor-pointer"
               activeClass="active"
               to="contact"
               spy={true}
@@ -186,6 +209,28 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            <Button
+              className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
+              activeClass="active"
+              to="sign-up"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Sign Up
+            </Button>
+            <Button
+              className="bg-[#478CF7] text-white border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
+              activeClass="active"
+              to="log-in"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Log In
+            </Button>
           </div>
         </div>
       )}
