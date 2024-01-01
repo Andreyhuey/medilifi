@@ -38,29 +38,29 @@ const Navbar = () => {
           </Link>
           <Link
             activeClass="active"
-            to=""
+            to="about"
             spy={true}
             smooth={true}
             offset={50}
             duration={500}
             className="hover:cursor-pointer hover:scale-110 trans"
           >
-            <li className="">About</li>
+            About
           </Link>
           <Link
             activeClass="active"
-            to=""
+            to="features"
             spy={true}
             smooth={true}
             offset={50}
             duration={500}
             className="hover:cursor-pointer hover:scale-110 trans"
           >
-            <li className="">Features</li>
+            Features
           </Link>
           <Link
             activeClass="active"
-            to=""
+            to="services"
             spy={true}
             smooth={true}
             offset={50}
@@ -71,7 +71,7 @@ const Navbar = () => {
           </Link>
           <Link
             activeClass="active"
-            to=""
+            to="blog"
             spy={true}
             smooth={true}
             offset={50}
@@ -145,7 +145,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-10 items-center h-screen pt-10">
             <Link
               activeClass="active"
-              to=""
+              to="home"
               spy={true}
               smooth={true}
               offset={50}
@@ -156,7 +156,7 @@ const Navbar = () => {
             </Link>
             <Link
               activeClass="active"
-              to=""
+              to="about"
               spy={true}
               smooth={true}
               offset={50}
@@ -167,7 +167,7 @@ const Navbar = () => {
             </Link>
             <Link
               activeClass="active"
-              to=""
+              to="features"
               spy={true}
               smooth={true}
               offset={50}
@@ -178,7 +178,7 @@ const Navbar = () => {
             </Link>
             <Link
               activeClass="active"
-              to=""
+              to="services"
               spy={true}
               smooth={true}
               offset={50}
@@ -189,7 +189,7 @@ const Navbar = () => {
             </Link>
             <Link
               activeClass="active"
-              to=""
+              to="blog"
               spy={true}
               smooth={true}
               offset={50}
