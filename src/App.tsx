@@ -11,16 +11,7 @@ import {
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Header />
-      <About />
-      <Features />
-      <Services />
-      <Contact />
-      <Team />
-      <Footer />
-    </>
+    
   );
 }
 
