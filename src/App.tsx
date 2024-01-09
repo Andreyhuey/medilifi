@@ -1,17 +1,10 @@
-import {
-  About,
-  Features,
-  Header,
-  Navbar,
-  Services,
-  Team,
-  Footer,
-  Contact,
-} from "./components";
+import { Outlet } from "react-router";
 
 function App() {
   return (
-    
+    <>
+      <Outlet />
+    </>
   );
 }
 
