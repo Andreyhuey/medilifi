@@ -5,3 +5,6 @@ This is a medical establishment that focuses on the utilization of Light-Fidelit
 The aim is to ensure that consistent patient data is generated and notifications in case of incidents is established
 
 The patient data to be collected consists of the heart rate, temperature and the blood oxygen saturation level
+
+Helpful youtube links
+react typescript react-router-dom [https://www.youtube.com/watch?v=G7UzhrNX60o]

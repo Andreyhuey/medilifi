@@ -6,6 +6,20 @@ import image5 from "./assets/img1.png";
 import image6 from "./assets/img2.png";
 import image7 from "./assets/img3.svg";
 
+export const database = [
+  {
+    users: {
+      "john doe": {
+        vitals: {
+          heartRate: 120,
+          sp02: 99,
+          tempC: 34,
+        },
+      },
+    },
+  },
+];
+
 export const team = [
   {
     img: image1,

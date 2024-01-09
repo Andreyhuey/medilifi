@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="bg-[#CCE0FF] lg:px-12 md:px-8 px-4 py-3 lg:py-1 fixed top-0 z-30 w-full">
       {/* for pcs and tabs */}
       <div className="hidden md:flex items-center justify-between">
-        <ul className="flex items-center md:gap-12 lg:gap-16">
+        <ul className="flex items-center md:gap-8 lg:gap-16">
           <Link
             className="h1 hover:cursor-pointer"
             activeClass="active"

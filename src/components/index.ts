@@ -11,6 +11,7 @@ import Newsletter from "./Newsletter";
 import Services from "./Services";
 import Team from "./Team";
 import Testimonials from "./Testimonials";
+import NavbarAuth from "./NavbarAuth";
 
 export {
   About,
@@ -26,4 +27,5 @@ export {
   Services,
   Team,
   Testimonials,
+  NavbarAuth,
 };
