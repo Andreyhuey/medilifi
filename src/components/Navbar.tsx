@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, Button } from "react-scroll";
+import { Link as Navigate } from "react-router-dom";
 
 // icons
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -83,28 +84,18 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="flex gap-3">
-          <Button
+          <Navigate
             className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
-            activeClass="active"
-            to="sign-up"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
+            to="/signup"
           >
             Sign Up
-          </Button>
-          <Button
+          </Navigate>
+          <Navigate
             className="bg-[#478CF7] text-white border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
-            activeClass="active"
-            to="log-in"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
+            to="/login"
           >
             Log In
-          </Button>
+          </Navigate>
         </div>
       </div>
 
@@ -194,28 +185,28 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Button
+            <Navigate
               className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
-              activeClass="active"
-              to="sign-up"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
+              to="/signup"
+              // activeClass="active"
+              // spy={true}
+              // smooth={true}
+              // offset={0}
+              // duration={500}
             >
               Sign Up
-            </Button>
-            <Button
+            </Navigate>
+            <Navigate
               className="bg-[#478CF7] text-white border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
-              activeClass="active"
-              to="log-in"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
+              to="/login"
+              // activeClass="active"
+              // spy={true}
+              // smooth={true}
+              // offset={0}
+              // duration={500}
             >
               Log In
-            </Button>
+            </Navigate>
           </div>
         </div>
       )}
