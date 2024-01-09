@@ -2,7 +2,10 @@ import header from "../assets/header-img.png";
 
 const Header = () => {
   return (
-    <div className="bg-[#CCE0FF] section min-h-screen h-full flex flex-col w-full justify-center items-center">
+    <div
+      className="bg-[#CCE0FF] section min-h-screen h-full flex flex-col w-full justify-center items-center"
+      id="home"
+    >
       <div className="flex flex-col md:flex-row justify-center items-center h-full w-full lg:w-[100%] gap-4 md:gap-12 lg:gap-20">
         <div className="lg:order-1 order-2 flex flex-col gap-5 items-start">
           <p className="text-[#A1A7B0]">MEDICAL</p>

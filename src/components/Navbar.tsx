@@ -21,17 +21,17 @@ const Navbar = () => {
   }, [nav]);
 
   return (
-    <div className="bg-[#CCE0FF] lg:px-12 md:px-8 px-4 py-3">
+    <div className="bg-[#CCE0FF] lg:px-12 md:px-8 px-4 py-3 lg:py-1 fixed top-0 z-30 w-full">
       {/* for pcs and tabs */}
       <div className="hidden md:flex items-center justify-between">
         <ul className="flex items-center md:gap-12 lg:gap-16">
           <Link
             className="h1 hover:cursor-pointer"
             activeClass="active"
-            to=""
+            to="home"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={0}
             duration={500}
           >
             MED
@@ -41,7 +41,7 @@ const Navbar = () => {
             to="about"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={0}
             duration={500}
             className="hover:cursor-pointer hover:scale-110 trans"
           >
@@ -52,7 +52,7 @@ const Navbar = () => {
             to="features"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={0}
             duration={500}
             className="hover:cursor-pointer hover:scale-110 trans"
           >
@@ -63,29 +63,19 @@ const Navbar = () => {
             to="services"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={0}
             duration={500}
             className="hover:cursor-pointer hover:scale-110 trans"
           >
             Services
           </Link>
-          <Link
-            activeClass="active"
-            to="blog"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-            className="hover:cursor-pointer hover:scale-110 trans"
-          >
-            Blog
-          </Link>
+
           <Link
             activeClass="active"
             to="contact"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={0}
             duration={500}
             className="hover:cursor-pointer hover:scale-110 trans"
           >
@@ -99,7 +89,7 @@ const Navbar = () => {
             to="sign-up"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={0}
             duration={500}
           >
             Sign Up
@@ -110,7 +100,7 @@ const Navbar = () => {
             to="log-in"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={0}
             duration={500}
           >
             Log In
@@ -126,7 +116,7 @@ const Navbar = () => {
           to=""
           spy={true}
           smooth={true}
-          offset={50}
+          offset={0}
           duration={500}
         >
           MED
@@ -148,9 +138,10 @@ const Navbar = () => {
               to="home"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={-50}
               duration={500}
               className="hover:cursor-pointer"
+              onClick={handleNav}
             >
               Home
             </Link>
@@ -159,9 +150,10 @@ const Navbar = () => {
               to="about"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={-50}
               duration={500}
               className="hover:cursor-pointer"
+              onClick={handleNav}
             >
               About
             </Link>
@@ -170,9 +162,10 @@ const Navbar = () => {
               to="features"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={-50}
               duration={500}
               className="hover:cursor-pointer"
+              onClick={handleNav}
             >
               Features
             </Link>
@@ -181,31 +174,23 @@ const Navbar = () => {
               to="services"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={-50}
               duration={500}
               className="hover:cursor-pointer"
+              onClick={handleNav}
             >
               Services
             </Link>
-            <Link
-              activeClass="active"
-              to="blog"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-              className="hover:cursor-pointer"
-            >
-              Blog
-            </Link>
+
             <Link
               className="hover:cursor-pointer"
               activeClass="active"
               to="contact"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={-50}
               duration={500}
+              onClick={handleNav}
             >
               Contact
             </Link>
@@ -215,7 +200,7 @@ const Navbar = () => {
               to="sign-up"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={0}
               duration={500}
             >
               Sign Up
@@ -226,7 +211,7 @@ const Navbar = () => {
               to="log-in"
               spy={true}
               smooth={true}
-              offset={50}
+              offset={0}
               duration={500}
             >
               Log In

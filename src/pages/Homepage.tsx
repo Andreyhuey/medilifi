@@ -11,7 +11,7 @@ import {
 
 const Homepage = () => {
   return (
-    <>
+    <div className="relative">
       <Navbar />
       <Header />
       <About />
@@ -20,7 +20,7 @@ const Homepage = () => {
       <Contact />
       <Team />
       <Footer />
-    </>
+    </div>
   );
 };
 

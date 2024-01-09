@@ -6,7 +6,7 @@ import img from "../assets/service-pic.png";
 
 const Features = () => {
   return (
-    <div className="min-h-screen bg-[#CCE0FF] section">
+    <div className="min-h-screen bg-[#CCE0FF] section" id="features">
       <div className="flex flex-col justify-center items-center gap-5">
         <p className="text-[#A1A7B0]">FEATURES </p>
         <h1 className="lg:text-[56px] text-[46px] font-bold lg:leading-[64px] leading-[50px]">

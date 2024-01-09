@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 
 const About = () => {
   return (
-    <div className="min-h-screen section">
+    <div className="min-h-screen section" id="about">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-y-10">
         <img src={aboutImg} alt="about image" />
         <div className="flex flex-col gap-5 items-start lg:max-w-[450px]">

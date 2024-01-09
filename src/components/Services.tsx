@@ -5,7 +5,7 @@ import icon7 from "../assets/icon7.png";
 
 const Services = () => {
   return (
-    <div className="min-h-screen section bg-white w-full">
+    <div className="min-h-screen section bg-white w-full" id="services">
       <div className="flex flex-col justify-center items-center gap-5">
         <p className="text-[#A1A7B0]">SERVICES </p>
         <h1 className="lg:text-[56px] text-[46px] font-bold lg:leading-[64px] leading-[50px] lg:w-full text-center">

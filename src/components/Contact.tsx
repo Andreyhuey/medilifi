@@ -4,16 +4,19 @@ import { BsPhone } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen section flex flex-col lg:flex-row gap-16 justify-between">
-      <div className="flex-1">
+    <div
+      className="min-h-screen section flex flex-col lg:flex-row gap-16 justify-between"
+      id="contact"
+    >
+      <div className="flex-1 h-full order-2 lg:order-1">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126830.70957847485!2d3.342336!3d6.5896448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1687882992552!5m2!1sen!2sng"
-          className="h-full w-full"
+          className="h-full w-full "
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <div className="flex-1 flex flex-col items-start justify-center">
+      <div className="flex-1 flex flex-col items-start justify-center order-1 lg:order-2">
         <div>
           <p className="text-[#A1A7B0]">CONTACT</p>
           <h1 className="lg:text-[56px] text-[46px] font-bold lg:leading-[64px] leading-[50px] lg:max-w-[396px] text-left pt-2">
