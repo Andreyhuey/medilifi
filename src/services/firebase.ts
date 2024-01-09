@@ -34,6 +34,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const database = getDatabase(app);
 
+// google sign in
 const googleProvider = new GoogleAuthProvider();
 
 const signInWithGoogle = async () => {
@@ -56,6 +57,7 @@ const signInWithGoogle = async () => {
   }
 };
 
+// email and password registration
 const registerWithEmailAndPassword = async (name, phone, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -73,6 +75,7 @@ const registerWithEmailAndPassword = async (name, phone, email, password) => {
   }
 };
 
+// email and password login
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -82,6 +85,7 @@ const logInWithEmailAndPassword = async (email, password) => {
   }
 };
 
+// password rest code
 const sendPasswordReset = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -92,6 +96,7 @@ const sendPasswordReset = async (email) => {
   }
 };
 
+// logout code
 const logout = () => {
   signOut(auth);
 };
