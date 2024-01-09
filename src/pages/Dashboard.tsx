@@ -7,16 +7,6 @@ import { database as data } from "../services/firebase";
 import { ref, onValue } from "firebase/database";
 import { useEffect, useState, useRef } from "react";
 
-/* 
-const db = data;
-const vitalsRef = ref(db, `users`);
-
-onValue(vitalsRef, (snapshot) => {
-  const data = snapshot.val();
-  console.log(data);
-});
-*/
-
 interface vitals {
   heartRate: number;
   spO2: number;
