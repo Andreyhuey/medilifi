@@ -83,13 +83,7 @@ const Navbar = () => {
             Contact
           </Link>
         </ul>
-        <div className="flex gap-3">
-          <Navigate
-            className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
-            to="/signup"
-          >
-            Sign Up
-          </Navigate>
+        <div className="flex">
           <Navigate
             className="bg-[#478CF7] text-white border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
             to="/login"
@@ -185,25 +179,10 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Navigate
-              className="text-[#478CF7] border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
-              to="/signup"
-              // activeClass="active"
-              // spy={true}
-              // smooth={true}
-              // offset={0}
-              // duration={500}
-            >
-              Sign Up
-            </Navigate>
+
             <Navigate
               className="bg-[#478CF7] text-white border-[1px] border-[#478df75e] px-6 py-2 hover:scale-110 trans rounded-md"
               to="/login"
-              // activeClass="active"
-              // spy={true}
-              // smooth={true}
-              // offset={0}
-              // duration={500}
             >
               Log In
             </Navigate>
