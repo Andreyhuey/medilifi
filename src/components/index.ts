@@ -12,6 +12,8 @@ import Services from "./Services";
 import Team from "./Team";
 import Testimonials from "./Testimonials";
 import NavbarAuth from "./NavbarAuth";
+import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
 
 export {
   About,
@@ -28,4 +30,6 @@ export {
   Team,
   Testimonials,
   NavbarAuth,
+  LoginForm,
+  SignupForm,
 };
