@@ -1,8 +1,13 @@
 import { useState } from "react";
 import header from "../assets/header-img.png";
+import { LoginForm, SignupForm } from "../components";
 
 const Login = () => {
-  const [isLogin, setLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleIsLogin = () => {
+    setIsLogin(!isLogin);
+  };
 
   return (
     <>
@@ -12,8 +17,27 @@ const Login = () => {
             <img src={header} alt="header" />
           </div>
           <div className="bg-[#478CF7] w-full h-screen  lg:w-5/12 flex items-center justify-center">
-            <div className="w-[30vh] bg-[#F4FCFF] text-center rounded-xl">
-              <h1>Portal</h1>
+            <div className="lg:w-[60vh] bg-[#F4FCFF] rounded-xl flex flex-col gap-5 py-5 px-8 w-full">
+              <h1 className="text-2xl font-medium">Portal</h1>
+
+              <div className="flex gap-4 font-bold text-lg">
+                <button
+                  onClick={handleIsLogin}
+                  className={isLogin ? "text-[#478CF7]" : "text-black"}
+                >
+                  Login
+                </button>
+
+                <button
+                  onClick={handleIsLogin}
+                  className={!isLogin ? "text-[#478CF7]" : "text-black"}
+                >
+                  Sign up
+                </button>
+              </div>
+
+              {isLogin && <LoginForm />}
+              {!isLogin && <SignupForm />}
             </div>
           </div>
         </div>
