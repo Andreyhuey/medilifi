@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { InputPassword } from "../components";
 
 const LoginForm = () => {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
   return (
     <div>
       <form
@@ -12,15 +17,15 @@ const LoginForm = () => {
           required
           placeholder="Email Address"
           name="email"
-          //   value={email}
-          //   onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-4 font-bold"
         />
-        {/* <InputPassword
-        //   setPassword={setPassword}
-        //   password={password}
+        <InputPassword
+          setPassword={setPassword}
+          password={password}
           placeholder={"Password"}
-        /> */}
+        />
 
         <Link className="text-sm font-medium text-black" to="/reset-password">
           Forget Password?

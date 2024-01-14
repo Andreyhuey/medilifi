@@ -14,6 +14,7 @@ import Testimonials from "./Testimonials";
 import NavbarAuth from "./NavbarAuth";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
+import InputPassword from "./InputPassword";
 
 export {
   About,
@@ -32,4 +33,5 @@ export {
   NavbarAuth,
   LoginForm,
   SignupForm,
+  InputPassword,
 };
