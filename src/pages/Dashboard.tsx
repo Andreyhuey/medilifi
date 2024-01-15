@@ -1,9 +1,11 @@
 import { Loader, NavbarAuth } from "../components";
 import { FaHeartPulse, FaTemperatureHigh } from "react-icons/fa6";
 import { SiOxygen } from "react-icons/si";
-import { database as data } from "../services/firebase";
+import { useNavigate } from "react-router-dom";
+import { database as data, auth } from "../services/firebase";
 import { ref, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 interface vitals {
   heartRate: number;
@@ -12,15 +14,18 @@ interface vitals {
 }
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const db = data;
   const vitalsRef = ref(db, `users/John Doe/vitals`);
 
   const [vitals, setVitals] = useState<vitals | null>(null);
+  const [user, loading] = useAuthState(auth);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
   // original working code
   useEffect(() => {
+    if (!user) return navigate("/login");
     const listener = onValue(
       vitalsRef,
       (snapshot) => {
@@ -35,9 +40,9 @@ const Dashboard = () => {
       }
     );
     return () => listener();
-  }, []);
+  }, [user]);
 
-  if (isLoading) return <Loader text="Loading Patient Vitals..." />;
+  if (isLoading || loading) return <Loader text="Loading Patient Vitals..." />;
 
   return (
     <div className="relative h-full">

@@ -32,6 +32,7 @@ const SignupForm = () => {
           email,
           password
         );
+        toast.success("Welcome to MediLifi");
       }
     } catch (err: any) {
       toast.error(err);

@@ -1,17 +1,41 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { InputPassword } from "../components";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { InputPassword, Loader } from "../components";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { logInWithEmailAndPassword, auth } from "../services/firebase";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [user, loading] = useAuthState(auth);
+
+  const navigate = useNavigate();
+
+  const handleLogin = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      await logInWithEmailAndPassword(email, password);
+    } catch (err: any) {
+      toast.error(err.message);
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+    }
+  }, [user, navigate]);
+
+  if (user && loading) {
+    return <Loader text="Loading..." />;
+  }
 
   return (
     <div>
-      <form
-        className="flex flex-col gap-6"
-        //   onSubmit={(e) => loginHandler(e)}
-      >
+      <form className="flex flex-col gap-6" onSubmit={handleLogin}>
         <input
           type="email"
           required
@@ -19,7 +43,7 @@ const LoginForm = () => {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-4 font-bold"
+          className=" text-black placeholder:text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-2"
         />
         <InputPassword
           setPassword={setPassword}
@@ -31,7 +55,7 @@ const LoginForm = () => {
           Forget Password?
         </Link>
         <button
-          className="bg-[#478CF7] text-white py-4 font-semibold text-base md:text-xl rounded-lg"
+          className="bg-[#478CF7] text-white py-2 font-semibold text-base md:text-xl rounded-lg"
           type="submit"
         >
           Login

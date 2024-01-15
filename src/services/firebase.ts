@@ -18,6 +18,7 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA04NpEkWHSWAFn62poqwXSpFt-UAP7B0E",
@@ -95,8 +96,9 @@ const registerWithEmailAndPassword = async (
 const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-  } catch (err) {
-    console.error(err);
+  } catch (err: any) {
+    console.log(err);
+    toast.error(err);
     // alert(err.message);
   }
 };
@@ -106,8 +108,9 @@ const sendPasswordReset = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email);
     alert("Password reset link sent!");
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
+    toast.error(err);
     // alert(err.message);
   }
 };
