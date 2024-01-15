@@ -1,44 +1,23 @@
 import { useState } from "react";
 import { InputPassword } from "../components";
+import { Link } from "react-router-dom";
 
 const SignupForm = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState(null || "");
 
-  const registerHandler = (e) => {
-    e.preventDefault();
-    if (!isChecked) setErrors("Please agree to the terms and conditions");
-    if (password !== confirmPassword) setErrors("Passwords do not match");
-    const role = "student";
-    // postRegister({ email, password, role })
-    //   .unwrap()
-    //   .then((res) => {
-    //     const studentInfo = jwtDecode(res.token);
-    //     const redirect = `http://${role}${domain}`;
-    //     Cookies.set("studentInfo", JSON.stringify(studentInfo), {
-    //       domain: `${domain}`,
-    //     });
-    //     Cookies.set("studentToken", res.token, { domain: `${domain}` });
-    //     window.location.replace(redirect);
-    //     setErrors(null);
-    //   })
-    //   .catch((error) => {
-    //     setErrors(error?.data?.error);
-    //     console.log(error);
-    //   });
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
   };
 
   return (
     <div>
       <form
         className="flex flex-col gap-6"
-        onSubmit={(e) => registerHandler(e)}
+        // onSubmit={(e) => registerHandler(e)}
       >
-        <p>Create student account</p>
         <input
           type="email"
           required
@@ -53,11 +32,11 @@ const SignupForm = () => {
           password={password}
           placeholder={"Password"}
         />
-        <InputPassword
+        {/* <InputPassword
           setConfirmPassword={setConfirmPassword}
-          confirmPassword={confirmPassword}
+          // confirmPassword={confirmPassword}
           placeholder={"Confirm Password"}
-        />
+        /> */}
 
         <div className="flex items-center gap-4">
           <input
@@ -69,13 +48,13 @@ const SignupForm = () => {
             onChange={() => handleCheckboxChange()}
           />
           <p className="text-black">
-            I agree to OFFERLETTER
+            I agree to terms and conditions
             <span className="">
               {" "}
               <Link
                 to="#"
                 target="_blank"
-                className="text-base font-bold text-[#0D2C58]"
+                className="text-base font-bold text-[#478CF7]"
               >
                 User Agreement{" "}
               </Link>
@@ -86,7 +65,7 @@ const SignupForm = () => {
               <Link
                 to="#"
                 target="_blank"
-                className="text-base font-bold text-[#0D2C58]"
+                className="text-base font-bold text-[#478CF7]"
               >
                 Privacy Policy
               </Link>
@@ -94,7 +73,10 @@ const SignupForm = () => {
           </p>
         </div>
 
-        <button className="bg-[#0D2C58] text-white py-4 font-semibold text-base md:text-xl rounded-lg">
+        <button
+          className="bg-[#478CF7] text-white py-4 font-semibold text-base md:text-xl rounded-lg"
+          type="submit"
+        >
           Signup
         </button>
       </form>

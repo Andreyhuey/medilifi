@@ -3,15 +3,13 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 interface InputPasswordProps {
   password: string;
-  setPassword?: React.Dispatch<React.SetStateAction<string>>;
-  setConfirmPassword?: React.Dispatch<React.SetStateAction<string> | null>;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
   placeholder: string;
 }
 
 function InputPassword({
   password,
   setPassword,
-  setConfirmPassword,
   placeholder,
 }: InputPasswordProps): JSX.Element {
   const [inputType, setInputType] = useState<"password" | "text">("password");
@@ -23,11 +21,16 @@ function InputPassword({
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (setPassword) {
-      setPassword(e.target.value);
-    } else if (setConfirmPassword) {
-      setConfirmPassword(e.target.value);
-    }
+    // if (setPassword) {
+    //   setPassword(e.target.value);
+    // } else if (setConfirmPassword) {
+    //   setConfirmPassword(e.target.value);
+    // }
+
+    // recommended chatGPT settings
+    setPassword(e.target.value);
+
+    // If setConfirmPassword is provided, update it as well
   };
 
   return (
