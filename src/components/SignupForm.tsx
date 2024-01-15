@@ -2,8 +2,12 @@ import { useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { InputPassword, Loader } from "../components";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, registerWithEmailAndPassword } from "../services/firebase";
-import { toast } from "react-hot-toast";
+import {
+  auth,
+  registerWithEmailAndPassword,
+  database,
+} from "../services/firebase";
+import { set, ref } from "firebase/database";
 
 const SignupForm = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -32,13 +36,33 @@ const SignupForm = () => {
           email,
           password
         );
-        toast.success("Welcome to MediLifi");
+
+        const name = fname.toLowerCase() + " " + lname.toLowerCase();
+
+        set(ref(database, `users/${name}/vitals`), {
+          heartRate: 0,
+          spO2: 0,
+          tempC: 0,
+        });
       }
-    } catch (err: any) {
-      toast.error(err);
+    } catch (err) {
       console.log(err);
     }
   };
+
+  // export const database = [
+  //   {
+  //     users: {
+  //       "john doe": {
+  //         vitals: {
+  //           heartRate: 120,
+  //           sp02: 99,
+  //           tempC: 34,
+  //         },
+  //       },
+  //     },
+  //   },
+  // ];
 
   useEffect(() => {
     if (user) {

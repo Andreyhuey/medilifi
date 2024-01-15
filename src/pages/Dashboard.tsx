@@ -6,6 +6,7 @@ import { database as data, auth } from "../services/firebase";
 import { ref, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuth } from "../services/AuthContex";
 
 interface vitals {
   heartRate: number;
@@ -16,33 +17,37 @@ interface vitals {
 const Dashboard = () => {
   const navigate = useNavigate();
   const db = data;
-  const vitalsRef = ref(db, `users/John Doe/vitals`);
 
   const [vitals, setVitals] = useState<vitals | null>(null);
   const [user, loading] = useAuthState(auth);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const { userProp, fetching } = useAuth();
 
   // original working code
   useEffect(() => {
     if (!user) return navigate("/login");
+    // const vitalsRef = ref(db, `users/John Doe/vitals`);
+    const vitalsRef = ref(db, `users/${userProp?.name}/vitals`);
     const listener = onValue(
       vitalsRef,
       (snapshot) => {
         const fetchedData = snapshot.val();
         setVitals(fetchedData);
         console.log(fetchedData);
-        setIsLoading(false);
       },
       (error) => {
         console.error(error);
         setError("Failed to fetch data");
       }
     );
-    return () => listener();
-  }, [user]);
 
-  if (isLoading || loading) return <Loader text="Loading Patient Vitals..." />;
+    setIsLoading(false);
+    console.log(userProp?.name);
+    return () => listener();
+  }, [user, userProp, db]);
+
+  if (isLoading || loading || fetching) return <Loader text="Loading..." />;
 
   return (
     <div className="relative h-full">
