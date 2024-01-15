@@ -18,28 +18,26 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
-import dotenv from "dotenv";
-dotenv.config();
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyA04NpEkWHSWAFn62poqwXSpFt-UAP7B0E",
-//   authDomain: "medilifi-a63d4.firebaseapp.com",
-//   databaseURL: "https://medilifi-a63d4-default-rtdb.firebaseio.com",
-//   projectId: "medilifi-a63d4",
-//   storageBucket: "medilifi-a63d4.appspot.com",
-//   messagingSenderId: "592571138835",
-//   appId: "1:592571138835:web:c31cb671a003483bc310e6",
-// };
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  apiKey: "AIzaSyA04NpEkWHSWAFn62poqwXSpFt-UAP7B0E",
+  authDomain: "medilifi-a63d4.firebaseapp.com",
+  databaseURL: "https://medilifi-a63d4-default-rtdb.firebaseio.com",
+  projectId: "medilifi-a63d4",
+  storageBucket: "medilifi-a63d4.appspot.com",
+  messagingSenderId: "592571138835",
+  appId: "1:592571138835:web:c31cb671a003483bc310e6",
 };
+
+// const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+//   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+//   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+//   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+//   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+//   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+//   appId: process.env.REACT_APP_FIREBASE_APP_ID,
+// };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -71,7 +69,8 @@ const signInWithGoogle = async () => {
 
 // email and password registration
 const registerWithEmailAndPassword = async (
-  name: string,
+  fname: string,
+  lname: string,
   phone: string,
   email: string,
   password: string
@@ -81,10 +80,10 @@ const registerWithEmailAndPassword = async (
     const user = res.user;
     await addDoc(collection(db, "users"), {
       uid: user.uid,
-      name,
+      fname,
+      lname,
       phone,
       email,
-      password,
       authProvider: "local",
     });
   } catch (err) {

@@ -1,23 +1,81 @@
-import { useState } from "react";
-import { InputPassword } from "../components";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { InputPassword, Loader } from "../components";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, registerWithEmailAndPassword } from "../services/firebase";
+import { toast } from "react-hot-toast";
 
 const SignupForm = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [phone, setPhone] = useState("");
+  const [user, loading] = useAuthState(auth);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
+  const navigate = useNavigate();
+
+  const createUser = async (e: any) => {
+    e.preventDefault();
+    try {
+      if (isChecked === true) {
+        await registerWithEmailAndPassword(
+          fname,
+          lname,
+          phone,
+          email,
+          password
+        );
+      }
+    } catch (err: any) {
+      toast.error(err);
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+    }
+  }, [user, loading, navigate]);
+
+  if (loading) {
+    return <Loader text="Loading..." />;
+  }
+
   return (
     <div>
-      <form
-        className="flex flex-col gap-6"
-        // onSubmit={(e) => registerHandler(e)}
-      >
+      <form className="flex flex-col gap-6 h-fit" onSubmit={createUser}>
+        <input
+          type="text"
+          value={fname}
+          onChange={(e) => setFname(e.target.value)}
+          placeholder="First Name"
+          className="text-black placeholder:text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-2"
+          required
+        />
+        <input
+          type="text"
+          value={lname}
+          onChange={(e) => setLname(e.target.value)}
+          placeholder="Last Name"
+          className="text-black placeholder:text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-2"
+          required
+        />
+        <input
+          type="text"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="Phone Number"
+          className="text-black placeholder:text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-2"
+          required
+        />
         <input
           type="email"
           required
@@ -25,18 +83,13 @@ const SignupForm = () => {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-4 font-bold"
+          className="text-black placeholder:text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-2"
         />
         <InputPassword
           setPassword={setPassword}
           password={password}
           placeholder={"Password"}
         />
-        {/* <InputPassword
-          setConfirmPassword={setConfirmPassword}
-          // confirmPassword={confirmPassword}
-          placeholder={"Confirm Password"}
-        /> */}
 
         <div className="flex items-center gap-4">
           <input
@@ -74,10 +127,10 @@ const SignupForm = () => {
         </div>
 
         <button
-          className="bg-[#478CF7] text-white py-4 font-semibold text-base md:text-xl rounded-lg"
+          className="bg-[#478CF7] text-white py-2 font-semibold text-base md:text-xl rounded-lg"
           type="submit"
         >
-          Signup
+          Sign Up
         </button>
       </form>
     </div>

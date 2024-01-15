@@ -1,11 +1,9 @@
-import { NavbarAuth } from "../components";
-// import { database } from "../data";
+import { Loader, NavbarAuth } from "../components";
 import { FaHeartPulse, FaTemperatureHigh } from "react-icons/fa6";
 import { SiOxygen } from "react-icons/si";
-//
 import { database as data } from "../services/firebase";
 import { ref, onValue } from "firebase/database";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 interface vitals {
   heartRate: number;
@@ -39,14 +37,7 @@ const Dashboard = () => {
     return () => listener();
   }, []);
 
-  if (isLoading)
-    return (
-      <div className="backdrop-blur-sm flex items-center h-screen justify-center text-xl font-semibold bg-[#F4FCFF]">
-        <div className="bg-[rgba(244,252,255,0.9)] backdrop-filter backdrop-blur-md p-8 rounded-md">
-          Loading Patient Vitals...
-        </div>
-      </div>
-    );
+  if (isLoading) return <Loader text="Loading Patient Vitals..." />;
 
   return (
     <div className="relative h-full">
