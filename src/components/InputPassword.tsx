@@ -4,7 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 interface InputPasswordProps {
   password: string;
   setPassword?: React.Dispatch<React.SetStateAction<string>>;
-  setConfirmPassword?: React.Dispatch<React.SetStateAction<string>>;
+  setConfirmPassword?: React.Dispatch<React.SetStateAction<string> | null>;
   placeholder: string;
 }
 

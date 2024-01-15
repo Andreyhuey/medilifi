@@ -17,8 +17,11 @@ const Login = () => {
             <img src={header} alt="header" />
           </div>
           <div className="bg-[#478CF7] w-full h-screen  lg:w-5/12 flex items-center justify-center">
-            <div className="lg:w-[60vh] bg-[#F4FCFF] rounded-xl flex flex-col gap-5 py-5 px-8 w-full">
-              <h1 className="text-2xl font-medium">Portal</h1>
+            <div className="lg:w-[60vh] md:w-[50vh] bg-[#F4FCFF] rounded-xl flex flex-col gap-5 py-6 px-8 w-full">
+              <h1 className="text-3xl text-center font-bold">
+                {" "}
+                MediLifi Portal
+              </h1>
 
               <div className="flex gap-4 font-bold text-lg">
                 <button

@@ -31,7 +31,7 @@ const LoginForm = () => {
           Forget Password?
         </Link>
         <button
-          className="bg-[#0D2C58] text-white py-4 font-semibold text-base md:text-xl rounded-lg"
+          className="bg-[#478CF7] text-white py-4 font-semibold text-base md:text-xl rounded-lg"
           type="submit"
         >
           Login
