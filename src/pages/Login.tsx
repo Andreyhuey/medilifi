@@ -1,6 +1,8 @@
 import { useState } from "react";
 import header from "../assets/header-img.png";
 import { LoginForm, SignupForm } from "../components";
+import { Link } from "react-router-dom";
+import { IoMdHome } from "react-icons/io";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -11,7 +13,10 @@ const Login = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-[#CCE0FF]">
+      <div className="min-h-screen bg-[#CCE0FF] relative">
+        <Link className="absolute top-5 left-7" to={"/"}>
+          <IoMdHome className=" text-white lg:text-[#478CF7] text-3xl hover:scale-110 trans" />
+        </Link>
         <div className="flex flex-col lg:flex-row items-center justify-between h-full w-full">
           <div className="hidden lg:flex lg:w-7/12">
             <img src={header} alt="header" />
