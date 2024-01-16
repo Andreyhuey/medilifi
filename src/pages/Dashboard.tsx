@@ -24,7 +24,7 @@ const Dashboard = () => {
   const [error, setError] = useState("");
   const { userProp, fetching } = useAuth();
 
-  // original working code
+  // working code that fetches, checks and send notifications of patient vitals
   useEffect(() => {
     if (!user) return navigate("/login");
     const vitalsRef = ref(database, `users/John Doe/vitals`);
@@ -84,36 +84,37 @@ const Dashboard = () => {
     );
 
     // email and notification content
-    const sendEmail = (vital: any) => {
-      // Replace these values with your Email.js credentials
-      const userId = "W7DratuiH2eK_miQV";
-      const serviceId = "service_yhzzl9v";
-      const templateId = "template_zf7yp49";
-
-      const emailParams = {
-        to_name: userProp?.name || "Patient",
-        message: vital,
-        heartRate: vitals?.heartRate,
-        temp: vitals?.tempC,
-        oxy: vitals?.spO2,
-      };
-
-      emailjs
-        .send(serviceId, templateId, emailParams, userId)
-        .then((response) => {
-          toast.success("Email sent successfully");
-          console.log("Email sent successfully:", response);
-        })
-        .catch((error) => {
-          toast.error("Error sending email:", error);
-        });
-    };
 
     setIsLoading(false);
     return () => listener();
   }, [user, userProp, database]);
 
   if (isLoading || loading || fetching) return <Loader text="Loading..." />;
+
+  const sendEmail = (vital: any) => {
+    // Replace these values with your Email.js credentials
+    const userId = "fiE10GsuCfFXx-3VY";
+    const serviceId = "service_fl2wkae";
+    const templateId = "template_2fli3dp";
+
+    const emailParams = {
+      to_name: userProp?.name || "Patient",
+      message: vital,
+      heartRate: vitals?.heartRate,
+      temp: vitals?.tempC,
+      oxy: vitals?.spO2,
+    };
+
+    emailjs
+      .send(serviceId, templateId, emailParams, userId)
+      .then((response) => {
+        toast.success("Email sent successfully");
+        console.log("Email sent successfully:", response);
+      })
+      .catch((error) => {
+        toast.error("Error sending email:", error);
+      });
+  };
 
   return (
     <div className="relative h-full">
