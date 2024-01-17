@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Loader, NavbarAuth } from "../components";
 import { FaHeartPulse, FaTemperatureHigh } from "react-icons/fa6";

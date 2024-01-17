@@ -8,13 +8,12 @@ const Header = () => {
     >
       <div className="flex flex-col lg:flex-row justify-center items-center h-full w-full lg:w-[100%] gap-4 md:gap-12 lg:gap-20">
         <div className="lg:order-1 order-2 flex flex-col gap-5 items-start">
-          <p className="text-[#A1A7B0]">MEDICAL</p>
           <h1 className="lg:text-[70px] text-[56px] font-bold lg:leading-[80px] leading-[60px]">
-            Find Your Doctor
+            The Right Health Monitoring System.
           </h1>
           <p className="text-[#A1A7B0] lg:max-w-[370px]">
-            Medicine is the field of health and healing. It includes nurses,
-            doctors.
+            MediLi-fi is the field of health monitoring that utilizes
+            light-fidelity technology to transmit vital signs.
           </p>
           <button className="px-8 py-3 font-bold text-white bg-[#478CF7] rounded-sm trans">
             Appointment
