@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, Button } from "react-scroll";
+import { Link } from "react-scroll";
 import { Link as Navigate } from "react-router-dom";
 
 // icons

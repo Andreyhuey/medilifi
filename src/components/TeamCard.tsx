@@ -1,14 +1,4 @@
-interface Prop {
-  index: number;
-  item: {
-    img: string;
-    name: string;
-    role: string;
-  };
-}
-
-const TeamCard = ({ item }: Prop) => {
-  const { img, name, role } = item;
+const TeamCard = () => {
   return <div></div>;
 };
 
