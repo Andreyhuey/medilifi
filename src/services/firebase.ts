@@ -18,7 +18,7 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 
 const apikey = import.meta.env.VITE_FIREBASE_API_KEY;
 const authDomain = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN;
@@ -96,7 +96,7 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err: any) {
     console.log(err);
-    toast.error(err);
+    toast.error("invalid credentials, please try again")
   }
 };
 
@@ -107,7 +107,7 @@ const sendPasswordReset = async (email: string) => {
     alert("Password reset link sent!");
   } catch (err: any) {
     console.error(err);
-    toast.error(err);
+    
     // alert(err.message);
   }
 };

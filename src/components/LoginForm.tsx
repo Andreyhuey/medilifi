@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { InputPassword, Loader } from "../components";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { logInWithEmailAndPassword, auth } from "../services/firebase";
-import toast from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
 
 const LoginForm = () => {
   const [password, setPassword] = useState("");
@@ -36,6 +36,7 @@ const LoginForm = () => {
 
   return (
     <div>
+      <ToastContainer />
       <form className="flex flex-col gap-6" onSubmit={handleLogin}>
         <input
           type="email"
