@@ -9,6 +9,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [user, loading] = useAuthState(auth);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -18,13 +19,13 @@ const LoginForm = () => {
     try {
       await logInWithEmailAndPassword(email, password);
     } catch (err: any) {
-      toast.error(err.message);
       console.log(err);
     }
   };
 
   useEffect(() => {
     if (user) {
+      setError("");
       navigate("/dashboard");
     }
   }, [user, navigate]);
@@ -42,7 +43,10 @@ const LoginForm = () => {
           placeholder="Email Address"
           name="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setError("");
+          }}
           className=" text-black placeholder:text-[#8696AC] border-2 border-[#8696AC] outline-none rounded-lg px-4 py-2"
         />
         <InputPassword
@@ -54,6 +58,9 @@ const LoginForm = () => {
         <Link className="text-sm font-medium text-black" to="/reset-password">
           Forget Password?
         </Link>
+        {error && (
+          <p className="text-red-500 text-center font-[700]">{error}</p>
+        )}
         <button
           className="bg-[#478CF7] text-white py-2 font-semibold text-base md:text-xl rounded-lg"
           type="submit"
